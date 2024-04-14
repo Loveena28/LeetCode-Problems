@@ -1,15 +1,12 @@
+from collections import deque
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        if len(s) != len(t):
-            return False
-        count_dict = {}
+        letters = deque()
         for i in s:
-            if i not in count_dict:
-                count_dict[i] = 1
-            else:
-                count_dict[i] = count_dict[i] + 1
+            letters.append(i)
         for j in t:
-            if j in count_dict:
-                count_dict[j] = count_dict[j] - 1
-        return len(list(filter(lambda x : count_dict[x] != 0,count_dict))) == 0
-        
+            if j not in letters:
+                return False
+            letters.remove(j)
+        return len(letters) == 0
+            
