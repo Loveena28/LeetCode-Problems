@@ -7,7 +7,7 @@ class Solution:
             count[i] = count.get(i,0) + 1 # stores the frequency of each number
         for i in count:
             tempArr[count[i]].append(i) 
-            # at every index, its list will be appended with the numbers whose frequency is equal to the index
+            # at every index, its list will be appended with the numbers whose frequency is equal to the index, TC = O(n)
         for i in range(len(tempArr)-1,0,-1):
             if not tempArr[i] or len(finalAns) >= k:
                 continue
