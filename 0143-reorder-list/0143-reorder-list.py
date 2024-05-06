@@ -22,6 +22,8 @@ class Solution:
             second.next = prev
             prev = second
             second = front
+            
+        # merge the two lists
         
         first,second = head,prev
         while second:
